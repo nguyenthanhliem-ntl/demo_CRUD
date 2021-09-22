@@ -1,0 +1,3 @@
+<input  placeholder="text" [(ngModel)]="name"  #txtUsername>
+<h1 [style.color]="setColor?'red': 'blue'">{{name}}</h1>
+<h3>{{ txtUsername.value | json}}</h3>

@@ -1,0 +1,23 @@
+<div *ngIf="status">
+<input placeholder="en" [(ngModel)]="newEl"/>
+<input placeholder="vn" [(ngModel)]="newVn"/>
+  <button (click)="onAdd()">Thêm</button>
+</div>
+<button (click)="status= true" *ngIf="!status">Thêm từ mới</button>
+<hr>
+<br>
+<select [(ngModel)]="showDirec">
+<option value="check_all">xem tất cả</option>
+<option value="da_doc">từ đã học</option>
+<option value="chua_doc">từ chưa học</option>
+</select>
+<div *ngFor="let kew of dictionary" class="dd">
+  <div *ngIf="showDi(kew.de)">
+  <p>{{kew.en}}</p>
+  <p>{{kew.vn}}</p>
+  <button (click)="remote(kew.id)">Remote</button>
+    <button (click)="kew.de = !kew.de">
+      {{kew.de ? 'đã học ': 'chưa học' }}
+    </button>
+  </div>
+</div>
