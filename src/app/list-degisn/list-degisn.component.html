@@ -1,0 +1,7 @@
+<div *ngFor="let li of list">
+<app-degisn
+  [name] = "li.name"
+  [age]="li.age"
+  (remoteDegisn1)="remoteDegisn($event)">
+</app-degisn>
+</div>
