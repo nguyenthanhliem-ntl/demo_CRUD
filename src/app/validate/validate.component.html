@@ -2,8 +2,10 @@
   <input placeholder="email" ngModel #helo="ngModel"name="email" required email><br>
   <p *ngIf="helo.touched && helo.errors?.required"> rong</p>
   <p *ngIf="helo.touched && helo.errors?.email"> khong phai email</p>
-  <input placeholder="password" #hi="ngModel" type="password" required ngModel name="password"><br>
+  <input placeholder="password" #hi="ngModel" type="password" required ngModel name="password" minlength="6" pattern="[a-z]*"><br>
   <p *ngIf="hi.touched && hi.errors?.required">khong dc rong</p>
   <button [disabled]="formSignIn.invalid">Submit</button>
   <button (click)="onSub(formSignIn)">dds</button>a
 </form>
+<p>{{helo.errors | json}}</p>
+<p>{{hi.errors | json}}</p>
